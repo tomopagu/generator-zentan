@@ -48,8 +48,6 @@ var Ah4Generator = yeoman.generators.Base.extend({
     this.mkdir('src/js');
     this.mkdir('src/less');
 
-    this.template('index.html', 'src/index.html');
-
     this.template('_config.json', 'config.json');
   },
 
@@ -75,6 +73,8 @@ var Ah4Generator = yeoman.generators.Base.extend({
       this.template('grunt/_package.json', 'package.json');
 
       this.template('grunt/_readme.md', 'readme.md');
+
+      this.template('grunt/index.html', 'src/index.html');
     }
     else {
       this.copy('gulp/gulpfile.js', 'gulpfile.js');
@@ -83,6 +83,8 @@ var Ah4Generator = yeoman.generators.Base.extend({
       this.template('gulp/_package.json', 'package.json');
 
       this.template('gulp/_readme.md', 'readme.md');
+
+      this.template('gulp/index.html', 'src/index.html');
     }
   }
 
