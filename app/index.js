@@ -4,7 +4,6 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 
-
 var Ah4Generator = yeoman.generators.Base.extend({
   init: function () {
     this.pkg = require('../package.json');

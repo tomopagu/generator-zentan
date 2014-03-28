@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title><%= _.capitalize(siteName) %></title>
-		<!-- build:css assets/css/tidy-combined.css -->
-		<link href="compiled/css/combined.css" rel="stylesheet" media="screen">
-		<!-- /build -->
-	</head>
-	<body>
-		<h1>Congrats you have generated the base for <%= _.capitalize(siteName) %></h1>
+  <head>
+    <title><%= _.capitalize(siteName) %></title>
+    <!-- build:css assets/css/tidy-combined.css -->
+    <link href="compiled/css/combined.css" rel="stylesheet" media="screen">
+    <!-- /build -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Congrats you have generated the base for <%= _.capitalize(siteName) %></h1>
+        </div>
+      </div>
+    </div>
 
-		<script src="assets/js/combined.js"></script>
+    <script src="assets/js/combined.js"></script>
 
-		<script>
-			$.getScript('http://localhost:35729/livereload.js');
-		</script>
-	</body>
+    <!-- Browser Sync Scripts -->
+    <script src="//localhost:3000/socket.io/socket.io.js"></script>
+    <script>var ___socket___ = io.connect('http://localhost:3000');</script>
+    <script src="//localhost:3001/client/browser-sync-client.0.7.3.js"></script>
+  </body>
 </html>
