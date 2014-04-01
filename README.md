@@ -19,3 +19,9 @@ And you're done, now you can run `yo ah4` in a new folder to start a scaffold of
 2. Answer the questions yeoman asks you.
 3. Next yeoman will set up the project and download dependencies
 4. Use `grunt` / `gulp` to build project as before.
+
+### Troubleshooting
+
+If you have some errors try updating Node + NPM which you should be able to do by just installing latest installer from the node website.
+
+Any other issues feel free to log them in the tracker, ping @Tom or email tom@ahead4.com
