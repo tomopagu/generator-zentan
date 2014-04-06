@@ -1,4 +1,6 @@
 # generator-zentan
+![Dependencies](https://david-dm.org/tomo-san/generator-zentan.png)
+
 ## Grunt / Gulp Frontend Generator
 
 ### What is it?
