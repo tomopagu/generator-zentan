@@ -1,10 +1,10 @@
 {
-  "name": "generator-ah4",
-  "version": "0.0.0",
+  "name": "generator-zentan",
+  "version": "0.7.0",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "Tom/generator-ah4",
+  "repository": "tomo-san/generator-zentan",
   "author": {
     "name": "Thomas Moore",
     "email": "tom@ahead4.com"

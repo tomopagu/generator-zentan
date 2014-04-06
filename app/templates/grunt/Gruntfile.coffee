@@ -221,6 +221,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-uncss'
   grunt.loadNpmTasks 'grunt-processhtml'
+  grunt.loadNpmTasks 'grunt-browser-sync'
 
   # Default tasks.
   grunt.registerTask 'default', ['jshint', 'coffeelint', 'clean:assets', 'clean:dist', 'copy:assets', 'copy:bootstrap', 'copy:ie7', 'recess', 'concat', 'uncss', 'processhtml']# 'uglify' ]
@@ -229,3 +230,5 @@ module.exports = (grunt) ->
   grunt.registerTask 'js', ['jshint', 'coffeelint', 'concat:bootstrapJs', 'concat:siteJs', 'uglify']
   grunt.registerTask 'html', ['uncss', 'processhtml']
   grunt.registerTask 'img', ['clean:imgs', 'copy:assets']
+
+  grunt.registerTask 'auto', ['browserSync', 'watch']
