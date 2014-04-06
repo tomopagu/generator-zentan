@@ -6,7 +6,6 @@ var clean = require('gulp-clean');
 var rimraf = require('gulp-rimraf');
 var jshint = require('gulp-jshint');
 var coffeelint = require('gulp-coffeelint');
-var clean = require('gulp-clean');
 var less = require('gulp-less');
 var recess = require('gulp-recess');
 var coffee = require('gulp-coffee');
@@ -76,7 +75,7 @@ gulp.task('scripts', function() {
 			'src/vendor/bootstrap/assets/js/respond.min.js'
 		])
 		.pipe(gulp.dest('src/compiled/js'));
-	
+
 	/* Concat BootstrapJS Files */
 	gulp.src([
 			'src/vendor/bootstrap/js/transition.js',
@@ -208,7 +207,7 @@ gulp.task('build', ['wipeDist'], function() {
 	gulp.src('assets/js/*.js')
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/assets/js/'));
-	
+
 	/* UnCSS & Minify our CSS */
 	gulp.src([
 			'assets/css/combined.css'
