@@ -1,6 +1,6 @@
 # generator-zentan
 [![TravisCI Build Status](https://travis-ci.org/Tomo-san/generator-zentan.svg?branch=master)](https://travis-ci.org/Tomo-san/generator-zentan)
-![Dependencies](https://david-dm.org/tomo-san/generator-zentan.png)
+[![Dependencies](https://david-dm.org/tomo-san/generator-zentan.png)](https://david-dm.org/tomo-san/generator-zentan)
 
 ## Grunt / Gulp Frontend Generator
 
