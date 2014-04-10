@@ -5,7 +5,7 @@
 ## Grunt / Gulp Frontend Generator
 
 ### What is it?
-Based on the generator I created for my workplace, zentan is the testbed before things get merged into the workplace generator aswell as utilizing tools such as Travis-CI, Coveralls, David.dm which we don't use at work.
+Based on the generator I created for my workplace, zentan is the testbed before things get merged into the workplace generator aswell as utilizing tools such as Travis-CI and David.dm which we don't use at work.
 
 #### What can it do
 
