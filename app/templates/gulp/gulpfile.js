@@ -1,4 +1,5 @@
 /* Test gulpfile */
+'use strict';
 
 /* Load Gulp Taks */
 var gulp = require('gulp');
@@ -13,12 +14,10 @@ var concat = require('gulp-concat');
 var csso = require('gulp-csso');
 var uglify = require('gulp-uglify');
 var uncss = require('gulp-uncss');
-var lr = require('tiny-lr');
-var refresh = require('gulp-livereload');
-var server = lr();
+var browserSync = require('browser-sync');
 
 /* Clean our Files */
-gulp.task('wipeAssets', function() {
+gulp.task('wipeAssets', function () {
 	return gulp.src([
 			'/assets'
 		])
@@ -26,10 +25,9 @@ gulp.task('wipeAssets', function() {
 });
 
 /* Move our HTML to the root of the project */
-gulp.task('html', function() {
+gulp.task('html', function () {
 	gulp.src('src/*.html')
-		.pipe(gulp.dest('./'))
-		.pipe(refresh(server));
+		.pipe(gulp.dest('./'));
 });
 
 /* Copy our Files */
@@ -44,12 +42,11 @@ gulp.task('images', function () {
 	return gulp.src([
 			'src/img/**'
 		])
-		.pipe(gulp.dest('assets/img'))
-		.pipe(refresh(server));
-})
+		.pipe(gulp.dest('assets/img'));
+});
 
 /* Tasks for Scripts */
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
 	/* JSHint the Scripts */
 	gulp.src(['src/js/**/*.js'])
 		.pipe(jshint())
@@ -91,7 +88,7 @@ gulp.task('scripts', function() {
 			'src/vendor/bootstrap/js/tab.js',
 			'src/vendor/bootstrap/js/affix.js'
 		])
-		.pipe(concat("bootstrap.js"))
+		.pipe(concat('bootstrap.js'))
 		.pipe(gulp.dest('src/compiled/js'));
 
 	/* Concat all JS Files and move to Assets */
@@ -101,8 +98,7 @@ gulp.task('scripts', function() {
 			'src/compiled/js/site.js',
 		])
 		.pipe(concat('combined.js'))
-		.pipe(gulp.dest('assets/js'))
-		.pipe(refresh(server));
+		.pipe(gulp.dest('assets/js'));
 
 	/* Move our IE Compat Scripts */
 	gulp.src([
@@ -114,7 +110,7 @@ gulp.task('scripts', function() {
 });
 
 /* Tasks for our Styles */
-gulp.task('styles', function() {
+gulp.task('styles', function () {
 	/* Compile the Bootstrap Less */
 	gulp.src('src/vendor/bootstrap/less/bootstrap.less')
 		.pipe(less())
@@ -132,67 +128,46 @@ gulp.task('styles', function() {
 			'src/compiled/css/site.css',
 		])
 		.pipe(concat('combined.css'))
-		.pipe(gulp.dest('assets/css'))
-		.pipe(refresh(server));
+		.pipe(gulp.dest('assets/css'));
 
 	/* Move our IE Compat Bootstrap Style */
 	gulp.src('src/compiled/css/bootstrap-ie7.css')
 		.pipe(gulp.dest('assets/css'));
 });
 
+gulp.task('browser-sync', function () {
+  browserSync.init([
+		'assets/css/*.css',
+		'assets/js/*.js',
+		'*.html'
+	], {
+		server: {
+      baseDir: './'
+		}
+  });
+});
+
 /* The Default Build Task */
-gulp.task('default', function() {
+gulp.task('default', function () {
 	gulp.run('wipeAssets', 'html', 'images', 'scripts', 'styles');
 });
 
-/* The Watch (Livereload) Task */
-gulp.task('watch', function() {
-	/* Start the livereload server */
-	server.listen(35729, function (err) {
-		/* If Error, show us */
-    	if (err) return console.log(err);
-
-		/* Watch our HTML, run html task on Change */
-		gulp.watch([
-				'src/*.html'
-			], function(event) {
-				gulp.run('html');
-			});
-
-		/* Watch our IMGs, run images task on Change */
-		gulp.watch([
-				'src/img/**'
-			], function(event) {
-				gulp.run('images');
-			});
-
-		/* Watch our Scripts, run scripts task on Change */
-		gulp.watch([
-				'src/**/*.coffee',
-				'src/js/*.js',
-				'src/compiled/js/*.js',
-			], function(event) {
-				gulp.run('scripts');
-			});
-
-		/* Watch our Styles, run styles task on Change */
-		gulp.watch([
-				'src/less/*.less',
-				'src/**/*.css',
-			], function(event) {
-				gulp.run('styles');
-			});
-	});
+/* The Watch Task */
+gulp.task('watch', ['html', 'images', 'scripts', 'styles', 'browser-sync'], function () {
+	gulp.watch('src/*.html', ['html']);
+	gulp.watch('src/img/**', ['images']);
+	gulp.watch('src/js/*.js', ['scripts']);
+	gulp.watch('src/less/*.less', ['styles']);
 });
 
 /* Wipes the /dist directory */
-gulp.task('wipeDist', function() {
+gulp.task('wipeDist', function () {
 	return gulp.src('./dist')
 		.pipe(rimraf());
 });
 
 /* Builds the site to the /dist directory */
-gulp.task('build', ['wipeDist'], function() {
+gulp.task('build', ['wipeDist'], function () {
 	/* Move our HTML */
 	gulp.src('./*.html')
 		.pipe(gulp.dest('dist'));
