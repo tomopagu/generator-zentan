@@ -4,6 +4,33 @@
 ### What is it?
 generator-ah4 combines my two previous generators into one super generator. This means you can run `yo ah4` to build both grunt and gulp projects. Using yeoman makes it really easy to start new projects instead of the traditional way of copying from grunt-base or gulp-base and running `npm install` and then `bower install`.
 
+#### What can it do
+
+generator-ah4 first asks you what the project name is and then asks you whether you would like to use Grunt or gulp for the build processes.
+
+The Grunt Task:
+- Lints JS & Coffee Files (`grunt-contrib-jshint` & `grunt-coffeelint`)
+- Converts Coffee to JS (`grunt-contrib-coffee`)
+- Can Uglify JS Files (Off by Default) (`grunt-contrib-uglify`)
+- Converts LESS to CSS (`grunt-recess`)
+- Uses UnCSS to remove unused CSS (`grunt-uncss`)
+- Cleans directories (`grunt-contrib-clean`)
+- Copies files from directories to another (`grunt-contrib-copy`)
+- Concats Files (`grunt-contrib-concat`)
+- Processes HTML files (`grunt-processhtml`)
+- Watches files and runs tasks on changes + reloads browsers - `grunt auto`. (`grunt-contrib-watch` & `grunt-browser-sync`)
+
+The gulp task:
+- Cleans directories (`gulp-clean` & `gulp-rimraf`)
+- Lints JS & Coffee Files (`gulp-jshint` & `gulp-coffeelint`)
+- Converts Coffee to JS (`gulp-coffee`)
+- Uglifies JS (`gulp-uglify`)
+- Converts LESS to CSS (`gulp-less`)
+- Lints CSS (`gulp-recess`)
+- Removes Unused CSS (`gulp-uncss`)
+- Minifies CSS (`gulp-csso`)
+- Watches files and runs tasks on changes + reloads browsers - `gulp watch`. (`gulp-browser-sync`)
+
 ### Setup
 
 1. Grab Node if you haven't got it already.
@@ -22,6 +49,4 @@ And you're done, now you can run `yo ah4` in a new folder to start a scaffold of
 
 ### Troubleshooting
 
-If you have some errors try updating Node + NPM which you should be able to do by just installing latest installer from the node website.
-
-Any other issues feel free to log them in the tracker, ping @Tom or email tom@ahead4.com
+Any other issues feel free to log them in the tracker or contact me @Tom // tom@ahead4.com
