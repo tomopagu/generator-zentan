@@ -1,6 +1,6 @@
 {
   "name": "generator-zentan",
-  "version": "0.7.1",
+  "version": "0.7.5",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",

@@ -21,7 +21,7 @@ The Grunt Task:
 - Copies files from directories to another (`grunt-contrib-copy`)
 - Concats Files (`grunt-contrib-concat`)
 - Processes HTML files (`grunt-processhtml`)
-- Watches files and runs tasks on changes + reloads browsers. (`grunt-contrib-watch` & `grunt-browser-sync`)
+- Watches files and runs tasks on changes + reloads browsers - `grunt auto`. (`grunt-contrib-watch` & `grunt-browser-sync`)
 
 The gulp task:
 - Cleans directories (`gulp-clean` & `gulp-rimraf`)
@@ -32,7 +32,7 @@ The gulp task:
 - Lints CSS (`gulp-recess`)
 - Removes Unused CSS (`gulp-uncss`)
 - Minifies CSS (`gulp-csso`)
-- Watches and Runs Tasks on File Change + Livereload (`tiny-lr` & `gulp-livereload`)
+- Watches files and runs tasks on changes + reloads browsers - `gulp watch`. (`gulp-browser-sync`)
 
 ### Setup
 
@@ -48,7 +48,8 @@ And you're done, now you can run `yo zentan` in a new folder to start a scaffold
 1. Run `yo zentan` in a new folder.
 2. Answer the questions yeoman asks you.
 3. Next yeoman will set up the project and download dependencies
-4. Use `grunt` / `gulp` to build project as before.
+4. Use `grunt` / `gulp` to build project.
+5. `grunt auto` / `gulp watch` will watch files and build on the fly as well as reloading browsers for you
 
 ### Troubleshooting
 
