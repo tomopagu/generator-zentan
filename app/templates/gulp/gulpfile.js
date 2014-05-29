@@ -174,7 +174,7 @@ gulp.task('default', function () {
 
 /* The Watch Task */
 gulp.task('watch', ['html', 'images', 'scripts', 'styles', 'browser-sync'], function () {
-  gulp.watch('src/*.html', ['html']);
+  gulp.watch(['src/*.jade','src/elements/*.jade'], ['html']);
   gulp.watch('src/img/**', ['images']);
   gulp.watch('src/js/*.js', ['scripts']);
   gulp.watch('src/less/*.less', ['styles']);
