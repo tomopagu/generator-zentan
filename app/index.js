@@ -83,7 +83,7 @@ var Ah4Generator = yeoman.generators.Base.extend({
 
       this.template('gulp/_readme.md', 'readme.md');
 
-      this.template('gulp/index.html', 'src/index.html');
+      this.template('gulp/index.jade', 'src/index.jade');
     }
   }
 
