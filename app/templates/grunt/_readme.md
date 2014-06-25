@@ -1,9 +1,11 @@
 # <%= _.capitalize(siteName) %>
 
 ## Install
-1. Clone the repo to a new folder
-2. Run `npm install && bower install`
-3. Run `grunt` to build the site
+1. Grab [NodeJS](http://nodejs.org/).
+2. If you don't have Grunt or Bower, open up your Terminal and run `npm install -g grunt-cli && npm install -g bower`.
+3. Clone the repo to a new folder
+4. Run `npm install && bower install`
+5. Run `grunt` to build the site
 
 ## Commands
 

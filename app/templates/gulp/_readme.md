@@ -4,6 +4,13 @@ Loosely based off Grunt Base, gulp base uses the [gulp build system](http://gulp
 
 Quick Intro Slideshow to gulp: [http://slid.es/contra/gulp](http://slid.es/contra/gulp)
 
+## Install
+1. Grab [NodeJS](http://nodejs.org/).
+2. If you don't have Gulp or Bower, open up your Terminal and run `npm install -g gulp && npm install -g bower`.
+3. Clone this repo to a folder.
+4. Next inside this folder open up your Terminal again and type `npm install && bower install` to get the dependencies.
+5. Lastly run `gulp` twice to initially compile the site.
+
 ## Workflow
 
 1. Run `gulp` to initially compile the site. (May have to run twice)
