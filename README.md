@@ -32,6 +32,7 @@ The gulp task:
 - Lints CSS (`gulp-recess`)
 - Removes Unused CSS (`gulp-uncss`)
 - Minifies CSS (`gulp-csso`)
+- Converts Jade to HTML (`gulp-jade`)
 - Watches files and runs tasks on changes + reloads browsers - `gulp watch`. (`gulp-browser-sync`)
 
 ### Setup
